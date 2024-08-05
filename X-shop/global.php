@@ -2,7 +2,7 @@
     session_start();
 
 
-    $ROOT_URL='/X-shop';
+    $ROOT_URL='/X-SHOP';
     $CSS_ADMIN_URL = "$ROOT_URL/assets/admin/css";
     $FONT_ADMIN_URL= "$ROOT_URL/assets/admin/fonts";
     $IMAGE_ADMIN_URL= "$ROOT_URL/assets/admin/images";

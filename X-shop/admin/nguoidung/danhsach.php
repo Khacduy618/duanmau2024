@@ -1,8 +1,11 @@
 <h3 class="text-uppercase p-2 bg-light mb-2 border rounded text-center">Danh sách người dùng</h3>
     <div class="advance mb-2">
-        <div class="action-exc">
-        <a href="index.php?btn_add" class="btn btn-primary">Thêm người dùng mới</a>
-        <a href="#" class="btn btn-warning">Xóa tất cả mục đã chọn</a>
+        <div class="action-exc row align-items-center">
+        <a href="index.php?btn_add" class="btn btn-primary col-2 me-2">Thêm người dùng mới</a>
+        <form class="example" action="index.php" method="get" style="max-width:300px">
+                <input type="text" placeholder="Tìm người dùng..."  name="kyw">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </div>
     </div>
     <table id="customers" class="table-bordered table table-hover">
@@ -58,6 +61,9 @@
             ?>
         </tbody>
     </table>
+    <?php
+        if($totalrecord>8){
+    ?>
     <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center">
                                 <?php
@@ -117,3 +123,7 @@
                             </li> -->
                         </ul>
                     </nav>
+    <?php
+        }
+    ?>
+    

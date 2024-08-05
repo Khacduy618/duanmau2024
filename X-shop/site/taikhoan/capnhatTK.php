@@ -3,7 +3,7 @@
     require_once '../../dao/nguoidung.php';
     check_login();
     extract($_REQUEST);
-
+    $GioiTinh = $GioiTinhErr= "";
     if(exist_param('update-tk')){
         $MaND = $_POST['MaND'];
         $Ho = $_POST['Ho'];
@@ -11,11 +11,11 @@
         $Email = $_POST['Email'];
         $SDT = $_POST['SDT'];
         $DiaChi = $_POST['DiaChi'];
-        if(isset($_POST['GioiTinh'])){
-            $GioiTinh = $_POST['GioiTinh'];
-        }else{
-            $MESSAGE = "Vui lòng chọn giới tính !";
-        }
+        if (empty($_POST["GioiTinh"])) {
+            $GioiTinhErr = "GioiTinh is required";
+          } else {
+            $GioiTinh = $_POST["GioiTinh"];
+          }
         $TaiKhoan = $_POST['TaiKhoan'];
         $MatKhau = $_POST['MatKhau'];
         $Quyen_ID = $_POST['Quyen_ID'];

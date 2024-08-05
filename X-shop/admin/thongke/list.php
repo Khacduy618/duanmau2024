@@ -124,8 +124,5 @@
                 </div>
             </div>
         
-        <div class="form-group">
-            <a href="index.php?chart" class="btn btn-warning">Xem biểu đồ</a>
-        </div>
     </div>
 </div>

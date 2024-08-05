@@ -12,7 +12,7 @@
         $items_new = san_pham_moi_top_10();
         $items_selltop = san_pham_ban_chay();
         $items_nosell= san_pham_khong_co_luot_mua();
-        $items=thong_ke_sanpham();
+        $items  = thong_ke_sanpham();
         $VIEW_NAME="list.php";
     }
 

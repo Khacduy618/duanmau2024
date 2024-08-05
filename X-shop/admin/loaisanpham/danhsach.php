@@ -1,8 +1,12 @@
 <h3 class="text-uppercase p-2 bg-light mb-2 border rounded text-center">Danh sách loại sản phẩm</h3>
-    <div class="advance mb-2">
-        <div class="action-exc">
-        <a href="index.php?btn_add" class="btn btn-primary">Thêm loại sản phẩm mới</a>
-        <a href="#" class="btn btn-warning">Xóa tất cả mục đã chọn</a>
+    <div class="advance mb-3">
+        <div class="action-exc row align-items-center">
+        <a href="index.php?btn_add" class="btn btn-primary col-2 me-2">Thêm loại sản phẩm mới</a>
+            <form class="example" action="index.php" method="get" style="max-width:300px">
+                <input type="text" placeholder="Tìm loại sản phẩm..."  name="kyw">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+
         </div>
     </div>
     <?php
@@ -52,7 +56,10 @@
             ?>
         </tbody>
     </table>
-    <nav aria-label="Page navigation">
+    <?php
+        if($totalrecord>8){
+            ?>
+ <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
                 <?php
                 if ($current_page > 2) {
@@ -111,3 +118,7 @@
             </li> -->
         </ul>
     </nav>
+            <?php
+        }
+    ?>
+   

@@ -1,12 +1,12 @@
 <?php
     require_once 'pdo.php';
 
-    function Loadall_bill(){
-        $sql="select * from donhang order by ID_DH desc";
-        $bill=pdo_query($sql);
+    function Loadall_bill($MaND){
+        $sql="select * from donhang WHERE MaND =? order by ID_DH desc";
+        $bill=pdo_query($sql,$MaND);
         return $bill;
     }
-    function bill_page($kyw, $orderCondition, $item_per_page, $offset) {
+    function bill_page($kyw="", $orderCondition="", $item_per_page="", $offset="") {
         $sql="select * from donhang where 1";
         if($kyw!=""){
             $sql .=" and MaHD like '%".$kyw."%'";

@@ -35,7 +35,7 @@ function nguoidung_select_all($kyw="", $orderCondition="", $item_per_page="", $o
     $sql="select * from nguoidung where 1";
     
     if($kyw!=""){
-        $sql .=" and TenND like '%".$kyw."%'";
+        $sql .=" and CONCAT(Ho, ' ', Ten) like '%".$kyw."%'";
     }
     $sql.=" ".$orderCondition." limit ".$item_per_page." offset ".$offset ;
     return pdo_query($sql);

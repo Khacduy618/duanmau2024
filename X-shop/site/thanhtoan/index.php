@@ -38,7 +38,7 @@
                         extract($row);
                         $soluong=$_POST['soluong'][$MaSP];
                         
-                        $string.="('".$id_dh."', '".$MaSP."', '".$soluong."', '".$DonGia."' )";
+                        $string.="('".$id_dh."', '".$MaHD."', '".$MaSP."', '".$soluong."', '".$DonGia."' )";
                         if($key != count($rows)-1){
                             $string.=", ";
                         }
@@ -46,7 +46,7 @@
                 }   
                 $insertOrDetail=insert_cart($string);
                 unset($_SESSION['mycart']);
-                header('location: ../trangchinh');
+                header("location: hoadon.php?MaHD=$MaHD");
                 exit;
             }
         

@@ -5,8 +5,11 @@
     require_once "../../dao/nguoidung.php";
 
     check_login();
-    $year =2024;
-    $annual_revenue = calculate_annual_revenue($year);
+    $days = getDaysInCurrentMonth();
+    $years = get_years_for_report();
+    $annual_revenue = calculate_month_revenue();
+    $doanhthu_ngay = calculate_current_month_daily_revenue();
+    $doanhthu_nam = calculate_annual_revenue();
     $month_revenue = calculate_current_month_revenue();
     $total_bl = calculate_total_comments();
     $total_dh = calculate_total_orders();

@@ -118,8 +118,10 @@
                         </div><!-- End .row -->
                     </div><!-- End .products -->
 
-
-                    <nav aria-label="Page navigation">
+                <?php 
+                    if($totalrecord>8){
+                ?>
+                <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center">
                                 <?php
                                 if ($current_page > 2) {
@@ -178,6 +180,10 @@
                             </li> -->
                         </ul>
                     </nav>
+                <?php
+                    }
+                ?>
+                    
                 </div><!-- End .col-lg-9 -->
                 <aside class="col-lg-3 order-lg-first">
                     <div class="sidebar sidebar-shop">

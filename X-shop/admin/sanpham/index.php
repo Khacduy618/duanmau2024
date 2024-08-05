@@ -112,6 +112,11 @@
         require_once '../../site/sanpham/phantrang.php';
         $items = loadall_product($kyw, $orderCondition, $DMID, $LSP_ID, $item_per_page, $offset);
         $VIEW_NAME="danhsach.php";
+    }elseif (exist_param('kyw')) {
+        $kyw= $_GET['kyw'];
+        require_once '../../site/sanpham/phantrang.php';
+        $items = loadall_product($kyw, $orderCondition, $DMID, $LSP_ID, $item_per_page, $offset);
+        $VIEW_NAME = "danhsach.php";
     }
     else{
         if(!isset($_GET['DMID'])){

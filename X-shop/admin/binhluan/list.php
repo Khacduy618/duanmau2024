@@ -11,6 +11,10 @@
 </head>
 <body>
     <h3 class="alert alert-success text-uppercase">Tổng hợp bình luận</h3>
+    <form class="example" action="index.php" method="get" style="max-width:300px">
+                <input type="text" placeholder="Tìm sản phẩm..."  name="kyw">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
     <form action="index.php" method="post">
         <table class="table">
             <thead class="alert-success">
@@ -42,7 +46,11 @@
             </tbody>
         </table>
     </form>
-    <nav aria-label="Page navigation">
+
+    <?php
+        if($totalrecord>8){
+            ?>
+  <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center">
                                 <?php
                                 if ($current_page > 2) {
@@ -101,5 +109,9 @@
                             </li> -->
                         </ul>
                     </nav>
+            <?php
+        }
+    ?>
+  
 </body>
 </html>

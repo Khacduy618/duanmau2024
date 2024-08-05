@@ -1,5 +1,8 @@
 <h3 class="text-uppercase p-2 bg-light mb-2 border rounded text-center">Danh sách đơn hàng</h3>
-
+    <form class="example" action="index.php" method="get" style="max-width:300px">
+        <input type="text" placeholder="Tìm đơn hàng..."  name="kyw">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
     <table id="customers" class="table-bordered table table-hover">
         <thead>
             <tr>
@@ -42,7 +45,10 @@
             ?>
         </tbody>
     </table>
-    <nav aria-label="Page navigation">
+    <?php
+        if($totalrecord>8){
+            ?>
+<nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center">
                                 <?php
                                 if ($current_page > 2) {
@@ -101,3 +107,7 @@
                             </li> -->
                         </ul>
                     </nav>
+            <?php
+        }
+    ?>
+    

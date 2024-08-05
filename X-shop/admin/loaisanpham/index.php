@@ -14,8 +14,8 @@
         $TenLSP=$_POST['TenLSP'];
         if(loaisanpham_exist($TenLSP)==true){
             $MESSAGE = "Loại sản phẩm này đã tồn tại";
-            if(isset($_POST['kyw'])){
-                $kyw=$_POST['kyw'];
+            if(isset($_GET['kyw'])){
+                $kyw=$_GET['kyw'];
             }else{
                 $kyw="";
             }
@@ -29,8 +29,8 @@
                 $MaDM=$_POST['MaDM'];
                 loaisanpham_insert($TenLSP, $HinhAnh, $MoTa, $MaDM);
                 $MESSAGE = 'Thêm mới thành công!';
-                if(isset($_POST['kyw'])){
-                    $kyw=$_POST['kyw'];
+                if(isset($_GET['kyw'])){
+                    $kyw=$_GET['kyw'];
                 }else{
                     $kyw="";
                 }
@@ -39,8 +39,8 @@
                 $VIEW_NAME = "danhsach.php";
             }catch(Exception $e){
                 $MESSAGE = 'Thêm mới thất bại!';
-                if(isset($_POST['kyw'])){
-                    $kyw=$_POST['kyw'];
+                if(isset($_GET['kyw'])){
+                    $kyw=$_GET['kyw'];
                 }else{
                     $kyw="";
                 }
@@ -72,8 +72,8 @@
         $TenLSP = $_POST['TenLSP'];
         if(loaisanpham_exist($TenLSP)==true){
             $MESSAGE = "Loại sản phẩm này đã tồn tại";
-            if(isset($_POST['kyw'])){
-                $kyw=$_POST['kyw'];
+            if(isset($_GET['kyw'])){
+                $kyw=$_GET['kyw'];
             }else{
                 $kyw="";
             }
@@ -87,8 +87,8 @@
                 $MaDM = $_POST['MaDM'];
                 loaisanpham_update($MaLSP, $TenLSP, $HinhAnh, $MoTa, $MaDM);
                 $MESSAGE = 'Cập nhật thành công!';
-                if(isset($_POST['kyw'])){
-                    $kyw=$_POST['kyw'];
+                if(isset($_GET['kyw'])){
+                    $kyw=$_GET['kyw'];
                 }else{
                     $kyw="";
                 }
@@ -97,8 +97,8 @@
                 $VIEW_NAME = "danhsach.php";
             }catch(Exception $e){
                 $MESSAGE = 'Cập nhật thất bại!';
-                if(isset($_POST['kyw'])){
-                    $kyw=$_POST['kyw'];
+                if(isset($_GET['kyw'])){
+                    $kyw=$_GET['kyw'];
                 }else{
                     $kyw="";
                 }
@@ -107,10 +107,15 @@
                 $VIEW_NAME = "danhsach.php";
             }
         }
+    }elseif (exist_param('kyw')) {
+        $kyw= $_GET['kyw'];
+        require_once 'phantrang.php';
+        $items=loaisanpham_page($kyw, $orderCondition, $item_per_page, $offset);
+        $VIEW_NAME = "danhsach.php";
     }
     else{
-        if(isset($_POST['kyw'])){
-            $kyw=$_POST['kyw'];
+        if(isset($_GET['kyw'])){
+            $kyw=$_GET['kyw'];
         }else{
             $kyw="";
         }

@@ -47,19 +47,16 @@ require_once '../../global.php';
                 </div>
                 <div class="form-group">
                     <label for="GioiTinh">Giới tính:</label>
-                    <div class="row col-lg-4 justify-content-between">
-                            <div class="row col-6 align-items-center justify-content-between">
-                                <input  id="GioiTinh1" type="radio" name="GioiTinh"
-                                <?php if (isset($_SESSION['nguoidung']['GioiTinh']) && $_SESSION['nguoidung']['GioiTinh']=="1") echo "checked";?>
-                                value="1">
-                                <label class="m-0" for="GioiTinh1">Nam</label>
-                            </div>
-                            <div class="row col-5 align-items-center justify-content-between">
-                                <input id="GioiTinh2" type="radio" name="GioiTinh"
-                                <?php if (isset($_SESSION['nguoidung']['GioiTinh']) && $_SESSION['nguoidung']['GioiTinh']=="0") echo "checked";?>
-                                value="0">
-                                <label class="m-0" for="GioiTinh2">Nữ</label>
-                            </div>
+                    <div class="form-group">
+                            <input id="GioiTinh1" type="radio" name="GioiTinh"
+                            <?php if (isset($GioiTinh) && $GioiTinh=="1") echo "checked";?>
+                            value="1">
+                            <label for="GioiTinh1">Nam</label>
+
+                            <input id="GioiTinh2" type="radio" name="GioiTinh"
+                            <?php if (isset($GioiTinh) && $GioiTinh=="0") echo "checked";?>
+                            value="0">
+                            <label for="GioiTinh2">Nữ</label>
                     </div>
                 </div>
             </div>

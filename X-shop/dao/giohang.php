@@ -19,7 +19,18 @@
         return pdo_execute_id($sql, $MaHD, $MaND, $name, $Email, $SDT, $GhiChu, $DiaChi, $PhuongThucTT, $tong, $TrangThai);
     }
     function insert_cart($string){
-        $sql= "INSERT INTO chitietdonhang(MaHD, MaSP, SoLuong, DonGia) VALUES $string";
+        $sql= "INSERT INTO chitietdonhang(ID_HD, MaHD, MaSP, SoLuong, DonGia) VALUES $string";
         pdo_execute($sql);
+    }
+    function get_bill($MaHD) {
+        $sql = "SELECT chitietdonhang.*, sanpham.TenSP, sanpham.HinhAnh1
+            FROM chitietdonhang
+            JOIN sanpham ON chitietdonhang.MaSP = sanpham.MaSP
+            WHERE chitietdonhang.MaHD = '".$MaHD."'";
+        return pdo_query($sql);
+    }
+    function get_bill_total($MaHD) {
+        $sql = "SELECT * FROM donhang WHERE MaHD=?";
+        return pdo_query_one($sql, $MaHD);
     }
 ?>

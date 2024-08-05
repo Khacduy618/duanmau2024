@@ -6,7 +6,7 @@
             <nav aria-label="breadcrumb" class="breadcrumb-nav">
                 <div class="container">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="../../">Trang chủ</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
                     </ol>
                 </div><!-- End .container -->
@@ -152,11 +152,23 @@
 												<label for="TrangThai4">VNPay</label>
 											</div>
 										</div>
-
-		                				<button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
+                                        <?php
+                                            if(isset($_SESSION['nguoidung'])){
+                                        ?>
+                                            <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
 		                					<span class="btn-text">Đặt hàng</span>
 		                					<span class="btn-hover-text">Tiến hành Kiểm tra</span>
-		                				</button>
+		                				    </button>
+                                        <?php  
+                                            }else{?>
+                                            <a class="btn btn-outline-primary-2 btn-order btn-block" href="../taikhoan">
+                                                <span class="btn-text">Đăng ký trước khi thanh toán</span>
+                                                <span class="btn-hover-text">Đi đến đăng ký</span>
+		                				    </a>
+                                        <?php    
+                                        }
+                                        ?>
+		                				
 		                			</div><!-- End .summary -->
 		                		</aside><!-- End .col-lg-3 -->
 		                	</div><!-- End .row -->

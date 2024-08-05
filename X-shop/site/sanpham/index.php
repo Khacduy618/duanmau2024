@@ -17,8 +17,8 @@
             $DMID=$_GET['DMID'];
         }
         //kiểm tra có phải form search không
-        if(isset($_POST['kyw'])){
-            $kyw=$_POST['kyw'];
+        if(isset($_GET['kyw'])){
+            $kyw=$_GET['kyw'];
         }else{
             $kyw="";
         }
@@ -56,8 +56,8 @@
             $LSP_ID=$_GET['LSP_ID'];
         }
         //kiểm tra có phải form search không
-        if(isset($_POST['kyw'])){
-            $kyw=$_POST['kyw'];
+        if(isset($_GET['kyw'])){
+            $kyw=$_GET['kyw'];
         }else{
             $kyw="";
         }

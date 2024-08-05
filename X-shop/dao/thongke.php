@@ -13,12 +13,31 @@ function thong_ke_sanpham(){
     return pdo_query($sql);
 }
 
+function getDaysInCurrentMonth() {
+    $currentMonth = date('n');
+    $currentYear = date('Y');
+    $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $currentMonth, $currentYear);
+    $days = [];
+    for ($i = 1; $i <= $daysInMonth; $i++) {
+        $days[] = $i;
+    }
+    return $days;
+}
+
+function get_years_for_report() {
+    $current_year = date('Y');
+    $start_year = $current_year - 5;
+    $years = range($start_year, $current_year);
+    return $years;
+}
+
 function san_pham_ban_chay() {
     $sql = "SELECT SP.*, COUNT(DH.MaSP) as SoLuongBan
     FROM sanpham SP
     JOIN chitietdonhang DH ON SP.MaSP = DH.MaSP
     GROUP BY SP.MaSP
-    ORDER BY SoLuongBan DESC";
+    ORDER BY SoLuongBan DESC
+    LIMIT 10";
     return pdo_query($sql);
 }
 
@@ -40,8 +59,9 @@ function record3(){
     
 }
 
-function calculate_annual_revenue($year) {
+function calculate_month_revenue() {
     $conn = pdo_get_connection();
+    $year = date('Y');
     $revenue = array();
 
     for ($month = 1; $month <= 12; $month++) {
@@ -113,7 +133,7 @@ function san_pham_khong_co_luot_mua() {
             FROM sanpham SP
             LEFT JOIN chitietdonhang DH ON SP.MaSP = DH.MaSP
             GROUP BY SP.MaSP
-            HAVING SUM(DH.SoLuong) IS NULL OR SUM(DH.SoLuong) = 0";
+            HAVING SUM(DH.SoLuong) IS NULL OR SUM(DH.SoLuong) = 0 LIMIT 10";
     return pdo_query($sql);
 }
 
@@ -123,4 +143,45 @@ function san_pham_moi_top_10() {
             ORDER BY SP.ThoiGian DESC
             LIMIT 10";
     return pdo_query($sql);
+}
+function calculate_current_month_daily_revenue() {
+    $conn = pdo_get_connection();
+    $current_month = date('n');
+    $current_year = date('Y');
+    $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $current_month, $current_year);
+    $dailyRevenue = array();
+
+    for ($day = 1; $day <= $daysInMonth; $day++) {
+        $sql = "SELECT SUM(TongTien) as DoanhThu FROM donhang 
+                WHERE DAY(NgayTaoDon) = :ngay AND MONTH(NgayTaoDon) = :thang AND YEAR(NgayTaoDon) = :nam";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':ngay', $day, PDO::PARAM_INT);
+        $stmt->bindParam(':thang', $current_month, PDO::PARAM_INT);
+        $stmt->bindParam(':nam', $current_year, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $dailyRevenue[$day] = $result['DoanhThu'];
+    }
+
+    return $dailyRevenue;
+}
+
+
+function calculate_annual_revenue() {
+    $conn = pdo_get_connection();
+    $current_year = date('Y');
+    $start_year = $current_year - 5;
+    $revenue = array();
+
+    for ($year = $start_year; $year <= $current_year; $year++) {
+        $sql = "SELECT SUM(TongTien) as DoanhThu FROM donhang 
+                WHERE YEAR(NgayTaoDon) = :nam";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':nam', $year, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $revenue[$year] = $result['DoanhThu'];
+    }
+
+    return $revenue;
 }

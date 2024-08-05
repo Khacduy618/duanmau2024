@@ -32,7 +32,15 @@
     <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/demos/demo-3.css">
     <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/main.min.css">
     <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/style.css">
-    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5JJRGH1N1X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5JJRGH1N1X');
+</script>
 </head>
 <body>
     <div class="page-wrapper">
@@ -46,38 +54,41 @@
                     <div class="header-right">
 
                         <ul class="top-menu">
-                            <ul>
-                                <li>
-                                    <div class="header-dropdown">
-                                        <a href="#">VNĐ</a>
-                                        <div class="header-menu">
-                                            <ul>
-                                                <li><a href="#">Eur</a></li>
-                                                <li><a href="#">Usd</a></li>
-                                            </ul>
-                                        </div><!-- End .header-menu -->
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="header-dropdown">
-                                        <a href="#">Vietnamese</a>
-                                        <div class="header-menu">
-                                            <ul>
-                                                <li><a href="#">English</a></li>
-                                                <li><a href="#">French</a></li>
-                                                <li><a href="#">Spanish</a></li>
-                                            </ul>
-                                        </div><!-- End .header-menu -->
-                                    </div>
-                                </li>
-                                <?php
-                                    if(isset($_SESSION['nguoidung'])){
-                                        require 'taikhoan/nguoidung.php';
-                                    }else{
-                                        echo '<li><a href="../taikhoan/index.php" >Sign in / Sign up</a></li>';
-                                    }
-                                ?>
-                            </ul>
+                            <li>
+                            <a href="#">Đăng nhập / Đăng ký</a>
+                                <ul>
+                                    <li>
+                                        <div class="header-dropdown">
+                                            <a href="#">VNĐ</a>
+                                            <div class="header-menu">
+                                                <ul>
+                                                    <li><a href="#">Eur</a></li>
+                                                    <li><a href="#">Usd</a></li>
+                                                </ul>
+                                            </div><!-- End .header-menu -->
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="header-dropdown">
+                                            <a href="#">Vietnamese</a>
+                                            <div class="header-menu">
+                                                <ul>
+                                                    <li><a href="#">English</a></li>
+                                                    <li><a href="#">French</a></li>
+                                                    <li><a href="#">Spanish</a></li>
+                                                </ul>
+                                            </div><!-- End .header-menu -->
+                                        </div>
+                                    </li>
+                                    <?php
+                                        if(isset($_SESSION['nguoidung'])){
+                                            require 'taikhoan/nguoidung.php';
+                                        }else{
+                                            echo '<li><a href="../taikhoan/index.php" >Đăng nhập / Đăng ký</a></li>';
+                                        }
+                                    ?>
+                                </ul>
+                            </li>
                         </ul><!-- End .top-menu -->
                     </div><!-- End .header-right -->
 
@@ -324,7 +335,7 @@
 	        	<div class="container">
 	        		<p class="footer-copyright">Copyright © 2024 X-Shop. All Rights Reserved.</p><!-- End .footer-copyright -->
 	        		<figure class="footer-payments">
-	        			<img src="<?=$IMAGE_SITE_URL?>/payments.png" alt="Payment methods">
+	        			<img src="<?=$IMAGE_SITE_URL?>/payments-summary.png" alt="Payment methods">
 	        		</figure><!-- End .footer-payments -->
 	        	</div><!-- End .container -->
 	        </div><!-- End .footer-bottom -->
@@ -383,7 +394,21 @@
     </div><!-- End .mobile-menu-container -->
 
    
-    
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});</script>
+        <script>
+        let map;
+
+async function initMap() {
+    const { Map } = await google.maps.importLibrary("maps");
+
+    map = new Map(document.getElementById("map"), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+    });
+}
+
+    </script>
     <!-- Plugins JS File -->
     <script src="<?=$JS_SITE_URL?>/jquery.min.js"></script>
     <script src="<?=$JS_SITE_URL?>/bootstrap.bundle.min.js"></script>

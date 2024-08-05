@@ -93,13 +93,18 @@
       require_once 'phantrang.php';
       $items = nguoidung_select_all($kyw, $orderCondition, $item_per_page, $offset);
         $VIEW_NAME="danhsach.php";
+    }elseif (exist_param('kyw')) {
+        $kyw= $_GET['kyw'];
+         require_once 'phantrang.php';
+    $items = nguoidung_select_all($kyw, $orderCondition, $item_per_page, $offset);
+        $VIEW_NAME = "danhsach.php";
     }
     else{
       if(isset($_POST['kyw'])){
         $kyw=$_POST['kyw'];
-    }else{
+        }else{
         $kyw="";
-    }
+        }
     require_once 'phantrang.php';
     $items = nguoidung_select_all($kyw, $orderCondition, $item_per_page, $offset);
         $VIEW_NAME = "danhsach.php";

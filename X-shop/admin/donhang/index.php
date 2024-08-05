@@ -17,8 +17,8 @@
         $DiaChi = $_POST['DiaChi'];
         $ttdh = $_POST['TrangThai'];
         update_bill($ID_DH, $NguoiNhan, $SDT, $DiaChi, $ttdh);
-        if(isset($_POST['kyw'])){
-            $kyw=$_POST['kyw'];
+        if(isset($_GET['kyw'])){
+            $kyw=$_GET['kyw'];
         }else{
             $kyw="";
         }
@@ -26,10 +26,15 @@
         require_once 'phantrang.php';
         $items=bill_page($kyw, $orderCondition, $item_per_page, $offset);
         $VIEW_NAME="danhsach.php";
+    }elseif (exist_param('kyw')) {
+        $kyw= $_GET['kyw'];
+        require_once 'phantrang.php';
+        $items=bill_page($kyw, $orderCondition, $item_per_page, $offset);
+        $VIEW_NAME = "danhsach.php";
     }
     else{
-        if(isset($_POST['kyw'])){
-            $kyw=$_POST['kyw'];
+        if(isset($_GET['kyw'])){
+            $kyw=$_GET['kyw'];
         }else{
             $kyw="";
         }
