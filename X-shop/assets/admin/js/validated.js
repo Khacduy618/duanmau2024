@@ -115,6 +115,36 @@ $().ready(function () {
             "ThongTin": {
                 required: true
             },
+            "CPU": {
+                required: true
+            },
+            "RAM": {
+                required: true
+            },
+            "SSD_HDD": {
+                required: true
+            },
+            "GPU":{
+                required: true
+            },
+            "OS": {
+                required: true
+            },
+            "kich_thuoc_man_hinh":{
+                required: true
+            },
+            "kich_thuoc": {
+                required: true
+            },
+            "mau_sac": {
+                required: true
+            },
+            "chat_lieu": {
+                required: true
+            },
+            "cong_giao_tiep": {
+                required: true
+            },
             "ThoiGian": {
                 required: true,
                 beforeToday: true
@@ -140,6 +170,36 @@ $().ready(function () {
             },
             "ThongTin": {
                 required: "Thông tin không được trống !"
+            },
+            "CPU": {
+                required: "CPU không được trống !"
+            },
+            "RAM": {
+                required: "RAM không được trống !"
+            },
+            "SSD_HDD": {
+                required: "Ổ cứng không được trống !"
+            },
+            "GPU":{
+                required: "Card màn hình không được trống !"
+            },
+            "OS": {
+                required: "Hệ điều hành không được trống !"
+            },
+            "kich_thuoc_man_hinh":{
+                required: "Kích thước màn hình không được trống !"
+            },
+            "kich_thuoc": {
+                required: "Kích thước không được trống !"
+            },
+            "mau_sac": {
+                required: "Màu sắc không được trống !"
+            },
+            "chat_lieu": {
+                required: "Chất liệu không được trống !"
+            },
+            "cong_giao_tiep": {
+                required: "Cổng giao tiếp không được trống !"
             },
             "ThoiGian": {
                 required: "Ngày nhập không được trống !",

@@ -48,7 +48,7 @@
             <td><?=$MoTa?></td>
             <td><?=($DM_ID == "5")?"Laptop": (($DM_ID== "6")?"Điện thoại":"Đồng hồ");?></td>
             <td><a href="<?=$sua?>" class="btn btn-danger">Sửa</a>
-                <a href="<?=$xoa?>" class="btn btn-warning">Xóa</a>
+                <a href="<?=$xoa?>" onclick="return confirm('Bạn có chắc chắn muốn xóa loại sản phẩm này?')" class="btn btn-warning">Xóa</a>
             </td>
             </tr>
             <?php

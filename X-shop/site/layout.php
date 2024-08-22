@@ -25,15 +25,22 @@
     <!-- Plugins CSS File -->
     <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/bootstrap.min.css">
     <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/plugins/owl-carousel/owl.carousel.css">
-    <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/plugins/magnific-popup/magnific-popup.css">
     <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/plugins/jquery.countdown.css">
     <!-- Main CSS File -->
     <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/skins/skin-demo-3.css">
     <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/demos/demo-3.css">
     <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/main.min.css">
     <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/style.css">
+    <link rel="stylesheet" href="<?=$CSS_SITE_URL?>/plugins/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JJRGH1N1X"></script>
+
+
+
+<!-- OR -->
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -55,7 +62,14 @@
 
                         <ul class="top-menu">
                             <li>
-                            <a href="#">Đăng nhập / Đăng ký</a>
+                                <?php
+                                    if(isset($_SESSION['nguoidung'])){
+                                            echo '';
+                                        }else{
+                                            echo '<a href="#">Đăng nhập / Đăng ký</a>';
+                                        }
+                                    ?>
+                            
                                 <ul>
                                     <li>
                                         <div class="header-dropdown">
@@ -409,7 +423,9 @@ async function initMap() {
 }
 
     </script>
+
     <!-- Plugins JS File -->
+     
     <script src="<?=$JS_SITE_URL?>/jquery.min.js"></script>
     <script src="<?=$JS_SITE_URL?>/bootstrap.bundle.min.js"></script>
     <script src="<?=$JS_SITE_URL?>/jquery.hoverIntent.min.js"></script>
@@ -417,15 +433,23 @@ async function initMap() {
     <script src="<?=$JS_SITE_URL?>/superfish.min.js"></script>
     <script src="<?=$JS_SITE_URL?>/bootstrap-input-spinner.js"></script>
     <script src="<?=$JS_SITE_URL?>/jquery.plugin.min.js"></script>
-    <script src="<?=$JS_SITE_URL?>/jquery.magnific-popup.min.js"></script>
+    
     <script src="<?=$JS_SITE_URL?>/jquery.countdown.min.js"></script>
     <!-- Main JS File -->
     <script src="<?=$JS_SITE_URL?>/main.js"></script>
     <script src="<?=$JS_SITE_URL?>/demos/demo-3.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
     <script src="<?=$JS_SITE_URL?>/jquery-formvalidated.js"></script>
     <script src="<?=$JS_SITE_URL?>/owl.carousel.min.js"></script>
+    <script src="<?=$JS_SITE_URL?>/jquery.elevateZoom.min.js"></script>
+    <script src="<?=$JS_SITE_URL?>/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind('[data-fancybox]', {
+        // Custom options for all galleries
+      });    
+    </script>
 </body>
 
 </html>

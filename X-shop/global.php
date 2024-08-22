@@ -1,8 +1,7 @@
 <?php
     session_start();
 
-
-    $ROOT_URL='/X-SHOP';
+    $ROOT_URL='https://x-shop.kesug.com';
     $CSS_ADMIN_URL = "$ROOT_URL/assets/admin/css";
     $FONT_ADMIN_URL= "$ROOT_URL/assets/admin/fonts";
     $IMAGE_ADMIN_URL= "$ROOT_URL/assets/admin/images";
@@ -77,4 +76,36 @@
         header('location: '. $SITE_URL. '/trangchinh');
         exit;
     }
+    function execPostRequest($url, $data)
+        {
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                    'Content-Type: application/json',
+                    'Content-Length: ' . strlen($data))
+            );
+            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+            //execute post
+            $result = curl_exec($ch);
+            //close connection
+            curl_close($ch);
+            return $result;
+        }
+        // test momo:
+        // NGUYEN VAN A
+        // 9704 0000 0000 0018
+        // 03/07
+        // OTP
+        
+        // test vnpay:
+        // (vnp_TmnCode): CGXZLS0Z
+        // (vnp_HashSecret): XNBCJFAKAZQSGTARRLGCHVZWCIOIGSHN
+        // Ngân hàng: NCB
+        // Số thẻ: 9704198526191432198
+        // Tên chủ thẻ:NGUYEN VAN A
+        // Ngày phát hành:07/15
+        // Mật khẩu OTP:123456
 ?>

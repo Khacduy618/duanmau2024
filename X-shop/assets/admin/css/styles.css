@@ -541,7 +541,19 @@ body {
   height: 100%;
   object-fit: cover;
 }
-
+.table-responsive .hinhanh{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.table-striped.p-detail{
+  width: 100%;
+}
+tbody.product-detail td:nth-child(1),tbody.product-detail td:nth-child(3) {
+  font-weight: bold;
+}
+tbody.product-detail td{
+  padding: 10px;
+}
 .recentCustomers table tr td {
   padding: 12px 10px;
 }
@@ -608,6 +620,10 @@ body {
 
 /* ====================== Responsive Design ========================== */
 @media (max-width: 991px) {
+  .table-responsive .hinhanh{
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
   .graphBox {
     grid-template-columns: 1fr;
     height: auto;

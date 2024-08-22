@@ -1,17 +1,14 @@
 <ul class="navbar-nav">
-    <li class="logo">
+    <li class="nav-item">
         <a href="#" class="nav-link">
-          <div class="ms-3 me-3 user row align-items-center">
-            <?php
-                if(isset($_SESSION['nguoidung'])){
-                   ?><img src="<?=$UPLOAD_URL.$_SESSION['nguoidung']['Hinh']?>" alt="">
-                   <?php
-                }else{
-                    echo '<span>ADMIN</span>';
-                }
-            ?>
-        </div>
-        <span class="title"><?=$_SESSION['nguoidung']['Ten']?></span>
+            <span class="icon">
+                <div class="user">
+                    <img src="<?=$UPLOAD_URL.$_SESSION['nguoidung']['Hinh']?>" alt="">
+                </div>
+            </span>
+            <span class="title"><?=$_SESSION['nguoidung']['Ten']?></span>
+          
+        
         </a>
       </li>
     <li class="nav-item">

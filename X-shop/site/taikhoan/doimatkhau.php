@@ -4,8 +4,9 @@ require_once '../../global.php';
         echo '<h5>'.$MESSAGE.'</h5>';
     }
 ?>
-
-<div class="row justify-content-center">
+    <h2 class="mt-2 text-center">Đổi mật khẩu</h2>
+<div class="d-flex justify-content-center">
+    
     <form action="doi-mk.php" class="col-4 m-4 " method="post">
         <div class="form-group">
                 <label for="TaiKhoan">Tài khoản</label>

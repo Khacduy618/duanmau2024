@@ -31,6 +31,10 @@
         $sql= "update donhang set NguoiNhan='".$NguoiNhan."', SDT='".$SDT."' , DiaChi='".$DiaChi."', TrangThai='".$ttdh."' where ID_DH=".$ID_DH;
         pdo_execute($sql);
     }
+    function update_order_status($ID_DH, $TrangThai) {
+        $sql = "update donhang set TrangThai ='".$TrangThai."' where ID_DH ='".$ID_DH."'";
+        pdo_execute($sql);
+    }
     function loadone_bill($ID_DH){
         $sql="select * from donhang where ID_DH=".$ID_DH;
         $bill=pdo_query_one($sql);

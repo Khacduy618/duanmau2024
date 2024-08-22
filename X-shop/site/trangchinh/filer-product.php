@@ -56,8 +56,15 @@
                         </div><!-- End .product-action -->
 
                         <div class="product-action product-action-dark">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                            <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                            <form action="../giohang/index.php?addtocart" method="post">
+                                            <input type="hidden" name="MaSP" value="<?=$MaSP?>'">
+                                            <input type="hidden" name="TenSP" value="<?=$TenSP?>">
+                                            <input type="hidden" name="HinhAnh1" value="<?=$HinhAnh1?>">
+                                            <input type="hidden" name="Gia" value="<?=$DonGia?>">
+                                            <input type="hidden" name="soluong[<?=$MaSP?>]" value="1">
+                                            <!-- <a href="#" class="btn-product btn-cart" title="Add to cart"><span>Add to cart</span></a> -->
+                                            <input type="submit" name="addtocart" class="btn-product btn-cart" value=" Thêm vào giỏ hàng">
+                                        </form>
                         </div><!-- End .product-action -->
                     </figure><!-- End .product-media -->
 
@@ -137,8 +144,15 @@
                         </div><!-- End .product-action -->
 
                         <div class="product-action product-action-dark">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                            <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                            <form action="../giohang/index.php?addtocart" method="post">
+                                            <input type="hidden" name="MaSP" value="<?=$MaSP?>'">
+                                            <input type="hidden" name="TenSP" value="<?=$TenSP?>">
+                                            <input type="hidden" name="HinhAnh1" value="<?=$HinhAnh1?>">
+                                            <input type="hidden" name="Gia" value="<?=$DonGia?>">
+                                            <input type="hidden" name="soluong[<?=$MaSP?>]" value="1">
+                                            <!-- <a href="#" class="btn-product btn-cart" title="Add to cart"><span>Add to cart</span></a> -->
+                                            <input type="submit" name="addtocart" class="btn-product btn-cart" value=" Thêm vào giỏ hàng">
+                                        </form>
                         </div><!-- End .product-action -->
                     </figure><!-- End .product-media -->
 
@@ -217,8 +231,15 @@
                         </div><!-- End .product-action -->
 
                         <div class="product-action product-action-dark">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                            <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                            <form action="../giohang/index.php?addtocart" method="post">
+                                            <input type="hidden" name="MaSP" value="<?=$MaSP?>'">
+                                            <input type="hidden" name="TenSP" value="<?=$TenSP?>">
+                                            <input type="hidden" name="HinhAnh1" value="<?=$HinhAnh1?>">
+                                            <input type="hidden" name="Gia" value="<?=$DonGia?>">
+                                            <input type="hidden" name="soluong[<?=$MaSP?>]" value="1">
+                                            <!-- <a href="#" class="btn-product btn-cart" title="Add to cart"><span>Add to cart</span></a> -->
+                                            <input type="submit" name="addtocart" class="btn-product btn-cart" value=" Thêm vào giỏ hàng">
+                                        </form>
                         </div><!-- End .product-action -->
                     </figure><!-- End .product-media -->
 
@@ -297,8 +318,15 @@
                         </div><!-- End .product-action -->
 
                         <div class="product-action product-action-dark">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                            <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                            <form action="../giohang/index.php?addtocart" method="post">
+                                            <input type="hidden" name="MaSP" value="<?=$MaSP?>'">
+                                            <input type="hidden" name="TenSP" value="<?=$TenSP?>">
+                                            <input type="hidden" name="HinhAnh1" value="<?=$HinhAnh1?>">
+                                            <input type="hidden" name="Gia" value="<?=$DonGia?>">
+                                            <input type="hidden" name="soluong[<?=$MaSP?>]" value="1">
+                                            <!-- <a href="#" class="btn-product btn-cart" title="Add to cart"><span>Add to cart</span></a> -->
+                                            <input type="submit" name="addtocart" class="btn-product btn-cart" value=" Thêm vào giỏ hàng">
+                                        </form>
                         </div><!-- End .product-action -->
                     </figure><!-- End .product-media -->
 
@@ -376,8 +404,15 @@
                         </div><!-- End .product-action -->
 
                         <div class="product-action product-action-dark">
-                            <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to cart</span></a>
-                            <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick view</span></a>
+                            <form action="../giohang/index.php?addtocart" method="post">
+                                            <input type="hidden" name="MaSP" value="<?=$MaSP?>'">
+                                            <input type="hidden" name="TenSP" value="<?=$TenSP?>">
+                                            <input type="hidden" name="HinhAnh1" value="<?=$HinhAnh1?>">
+                                            <input type="hidden" name="Gia" value="<?=$DonGia?>">
+                                            <input type="hidden" name="soluong[<?=$MaSP?>]" value="1">
+                                            <!-- <a href="#" class="btn-product btn-cart" title="Add to cart"><span>Add to cart</span></a> -->
+                                            <input type="submit" name="addtocart" class="btn-product btn-cart" value=" Thêm vào giỏ hàng">
+                                        </form>
                         </div><!-- End .product-action -->
                     </figure><!-- End .product-media -->
 

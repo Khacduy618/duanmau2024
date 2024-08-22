@@ -128,33 +128,25 @@
 		                				</table><!-- End .table table-summary -->
 		                				<div class="form-group">
 											<div class="row align-items-center">
-												<input  id="TrangThai1" type="radio" name="PhuongThucTT"
-												<?php if (isset($PhuongThucTT) && $PhuongThucTT=="a") echo "checked";?>
-												value="a">
+												<input  id="TrangThai1" type="radio" name="PhuongThucTT" value="a">
 												<label for="TrangThai1">Tiền mặt</label>
 											</div>
 											<div class="row align-items-center">
-												<input  id="TrangThai2" type="radio" name="PhuongThucTT"
-												<?php if (isset($PhuongThucTT) && $PhuongThucTT=="b") echo "checked";?>
-												value="b">
-												<label for="TrangThai2">Chuyển khoản</label>
+												<input  id="TrangThai2" type="radio" name="PhuongThucTT" value="b">
+												<label for="TrangThai2">MoMo</label>
 											</div>
 											<div class="row align-items-center">
-												<input  id="TrangThai3" type="radio" name="PhuongThucTT"
-												<?php if (isset($PhuongThucTT) && $PhuongThucTT=="c") echo "checked";?>
-												value="c">
+												<input  id="TrangThai3" type="radio" name="PhuongThucTT" value="c">
 												<label for="TrangThai3">Thẻ ghi nợ</label>
 											</div>
 											<div class="row align-items-center">
-												<input  id="TrangThai4" type="radio" name="PhuongThucTT"
-												<?php if (isset($TranPhuongThucTTgThai) && $PhuongThucTT=="d") echo "checked";?>
-												value="d">
-												<label for="TrangThai4">VNPay</label>
+												<input  id="TrangThai4" type="radio" name="PhuongThucTT" value="d">
+												<label for="TrangThai4">ZaloPay</label>
 											</div>
 										</div>
                                         <?php
                                             if(isset($_SESSION['nguoidung'])){
-                                        ?>
+                                        ?>	
                                             <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
 		                					<span class="btn-text">Đặt hàng</span>
 		                					<span class="btn-hover-text">Tiến hành Kiểm tra</span>

@@ -1,4 +1,4 @@
-<h1 class="text-uppercase card-body">quản trị website</h1>
+<h1 class="text-uppercase card-body">Trang quản trị</h1>
 
 <div class="cardBox">
                 <div class="card">

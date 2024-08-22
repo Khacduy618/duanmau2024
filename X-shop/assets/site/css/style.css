@@ -21,6 +21,21 @@ body {
     overflow-x: hidden
 }
 
+.product-action.product-action-dark form {
+    width: 100%;
+}
+
+.product.product-2 .btn-product.btn-cart {
+    background-color: transparent;
+    width: 100%;
+}
+
+.product.product-2 .btn-product.btn-cart::before {
+    font-family: "molla";
+    content: '\e812';
+    margin-right: .9rem;
+}
+
 ::-moz-selection {
     color: #fff;
     background-color: #c96
@@ -10759,7 +10774,15 @@ small.form-text {
 .table td {
     vertical-align: middle
 }
-
+.table-striped.p-detail{
+    width: 100%;
+}
+tbody.product-detail td:nth-child(1),tbody.product-detail td:nth-child(3) {
+    font-weight: bold;
+}
+tbody.product-detail td{
+    padding: 10px;
+}
 .count-container {
     margin-bottom: 3.3rem
 }

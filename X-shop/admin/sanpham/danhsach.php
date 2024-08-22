@@ -16,10 +16,6 @@
                 <th>Tên sản phẩm</th>
                 <th>Hình ảnh</th>
                 <th>Đơn giá</th>
-                <th>Thông tin</th>
-                <th>Giảm giá</th>
-                <th>Đặc biệt</th>
-                <th>Lượt xem</th>
                 <th>Ngày nhập hàng</th>
                 <th>Chức năng</th>
             </tr>
@@ -36,20 +32,20 @@
                     }
                     $sua="index.php?btn_edit&MaSP=".$MaSP;
                     $xoa="index.php?btn_delete&MaSP=".$MaSP;
+                    $chitiet="index.php?chitiet&MaSP=".$MaSP;
             ?>
+            
             <tr>
             <td><input type="checkbox" name="MaSP[]" value="<?=$MaSP?>"></td>
             <td><?=$MaSP?></td>
-            <td><?=$TenSP?></td>
+            <td class="col-2"><?=$TenSP?></td>
             <td><?=$hinh1?></td>
             <td><?=number_format($DonGia,0,",",".")?>đ</td>
-            <td><?=$ThongTin?></td>
-            <td><?=number_format($GiamGia*100)?>%</td>
-            <td><?=($DacBiet == "1") ? "Có" : "Không";?></td>
-            <td><?=$LuotXem?></td>
             <td><?=$ThoiGian?></td>
-            <td><a href="<?=$sua?>" class="btn btn-danger m-1">Sửa</a>
-                <a href="<?=$xoa?>" class="btn btn-warning m-1">Xóa</a>
+            <td>
+                <a href="<?=$chitiet?>" class="btn btn-success m-1">Xem chi tiết</a>
+                <a href="<?=$sua?>" class="btn btn-danger m-1">Sửa</a>
+                <a href="<?=$xoa?>" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')" class="btn btn-warning m-1">Xóa</a>
             </td>
             </tr>
             <?php
@@ -57,6 +53,7 @@
             ?>
         </tbody>
     </table>
+    
     <?php
         if($totalrecord>8){
             ?>

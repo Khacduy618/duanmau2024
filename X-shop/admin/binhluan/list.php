@@ -11,10 +11,7 @@
 </head>
 <body>
     <h3 class="alert alert-success text-uppercase">Tổng hợp bình luận</h3>
-    <form class="example" action="index.php" method="get" style="max-width:300px">
-                <input type="text" placeholder="Tìm sản phẩm..."  name="kyw">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
+    
     <form action="index.php" method="post">
         <table class="table">
             <thead class="alert-success">
@@ -33,7 +30,7 @@
                 ?>
                 <tr>
                     <td><?=$TenSP?></td>
-                    <td><?=$SoLuong?></td>
+                    <td><?=$so_luong?></td>
                     <td><?=$cu_nhat?></td>
                     <td><?=$moi_nhat?></td>
                     <td>

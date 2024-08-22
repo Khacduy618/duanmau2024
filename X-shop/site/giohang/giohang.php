@@ -15,6 +15,7 @@
             <div class="page-content">
             	<div class="cart">
 	                <div class="container">
+                     <?php   if(!empty($_SESSION['mycart'])){ ?>
                         <form action="index.php?sub" class="row" method="POST">
                             <div class="col-lg-9">
                                 <table class="table table-cart table-mobile">
@@ -46,7 +47,7 @@
                                                     $ttien=$DonGia*$_SESSION['mycart'][$MaSP];
                                                     $tong+=$ttien;
                                                     $count += $_SESSION['mycart'][$MaSP];
-                                                    $xoasp='<a href="index.php?delcart&MaSP='.$MaSP.'" class="btn-remove"><i class="icon-close"></i></a>';
+                                                    $xoasp='<a href="index.php?delcart&MaSP='.$MaSP.'" onclick="confirm(\'Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?\')" class="btn-remove"><i class="icon-close"></i></a>';
                                         ?>
                                         <tr>
                                             <td class="product-col">
@@ -78,7 +79,7 @@
                                 </table><!-- End .table table-wishlist -->
 
                                 <div class="cart-bottom">
-                                    <a href="index.php?delall&del=1" class="btn btn-outline-dark-2"><span>Xóa tất cả</span><i class="icon-close"></i></a>
+                                    <a href="index.php?delall&del=1" onclick ="return confirm('Bạn có chắc chắn xóa tất cả giỏ hàng?')" class="btn btn-outline-dark-2"><span>Xóa tất cả</span><i class="icon-close"></i></a>
                                     <div class="btn btn-outline-dark-2"><button type="submit" name="update_click">Cập nhật</button><i class="icon-refresh"></i></div>
                                     <!-- <a href="index.php?update_cart" class="btn btn-outline-dark-2"><span>Cập nhật giỏ hàng</span><i class="icon-refresh"></i></a> -->
                                 </div><!-- End .cart-bottom -->
@@ -114,6 +115,10 @@
                                 <a href="../sanpham" class="btn btn-outline-dark-2 btn-block mb-3"><span>Quay lại cửa hàng</span><i class="icon-refresh"></i></a>
                             </aside><!-- End .col-lg-3 -->
                         </form>
+                       <?php }else{ ?>
+                            <h4>Giỏ hàng rỗng</h4>
+                      <?php  }?>
+                        
 	                </div><!-- End .container -->
                 </div><!-- End .cart -->
             </div><!-- End .page-content -->

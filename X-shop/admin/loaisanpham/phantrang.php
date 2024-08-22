@@ -1,5 +1,5 @@
 <?php
-    $orderCondition="";
+    $orderCondition="ORDER BY MaLSP DESC";
     $orderField= isset($_GET['field']) ? $_GET['field'] : "";
     $orderSort= isset($_GET['sort']) ? $_GET['sort'] : "";
     if(!empty($orderField)&&!empty($orderSort)){

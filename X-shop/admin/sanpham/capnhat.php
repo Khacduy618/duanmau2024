@@ -1,6 +1,6 @@
 <h3 class="text-uppercase p-2 bg-light mb-2 border rounded text-center">Cập nhật sản phẩm</h3>
     
-    <form action="index.php" class="bg-white border p-3 rounded row" method="post" enctype="multipart/form-data">
+    <form action="index.php" class="bg-white border p-3 rounded row" id="form_sanpham" method="post" enctype="multipart/form-data">
         <div class="form-group col-lg-5 me-3"">
             <label for="TenSP">Tên sản phẩm:</label>
             <input type="text" class="form-control" name="TenSP" id="TenSP" value="<?=$TenSP?>">
@@ -66,6 +66,46 @@
             <label for="HinhAnh3">Hình ảnh 3:</label>
             <input type="file" class="form-control" name="HinhAnh3" id="HinhAnh3" ></input>
             <?=$hinh3?>
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="CPU">CPU:</label>
+            <input type="text" class="form-control" name="CPU" id="CPU" value="<?=$CPU?>">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="RAM">RAM:</label>
+            <input type="text" class="form-control" name="RAM" id="RAM" value="<?=$RAM?>">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="SSD_HDD">Ổ cứng:</label>
+            <input type="text" class="form-control" name="SSD_HDD" id="SSD_HDD" value="<?=$SSD_HDD?>">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="GPU">Card màn hình:</label>
+            <input type="text" class="form-control" name="GPU" id="GPU" value="<?=$GPU?>">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="OS">Hệ điều hành:</label>
+            <input type="text" class="form-control" name="OS" id="OS" value="<?=$OS?>">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="kich_thuoc_man_hinh">Kích thước màn hình:</label>
+            <input type="text" class="form-control" name="kich_thuoc_man_hinh" id="kich_thuoc_man_hinh" value="<?=$kich_thuoc_man_hinh?>">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="kich_thuoc">Kích thước:</label>
+            <input type="text" class="form-control" name="kich_thuoc" id="kich_thuoc" value="<?=$kich_thuoc?>">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="mau_sac">Màu sắc:</label>
+            <input type="text" class="form-control" name="mau_sac" id="mau_sac" value="<?=$mau_sac?>">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="chat_lieu">Chất liệu:</label>
+            <input type="text" class="form-control" name="chat_lieu" id="chat_lieu" value="<?=$chat_lieu?>">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="cong_giao_tiep">Cổng giao tiếp:</label>
+            <input type="text" class="form-control" name="cong_giao_tiep" id="cong_giao_tiep" value="<?=$cong_giao_tiep?>">
         </div>
         <div class="form-group col-lg-5 me-3">
             <label for="NgayNhap">Ngày nhập:</label>

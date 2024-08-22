@@ -19,7 +19,7 @@
         <tr>
             <td><?=$NguoiNhan?></td>
             <td><?=number_format($TongTien,0,",",".")?> đ</td>
-            <td><?=($PhuongThucTT == "a")?"Tiền mặt": (($PhuongThucTT== "b")?"Chuyển khoản":(($PhuongThucTT == "c")?"Thẻ ghi nợ":"VNPay"));?></td>
+            <td><?=($PhuongThucTT == "a")?"Tiền mặt": (($PhuongThucTT== "b")?"MoMo":(($PhuongThucTT == "c")?"Thẻ ghi nợ":"VNPay"));?></td>
             <td><span <?php if($TrangThai == "a"){
                 echo 'class="status return" ';
             }elseif ($TrangThai == "b" || $TrangThai == "c") {

@@ -41,15 +41,16 @@ function san_pham_ban_chay() {
     return pdo_query($sql);
 }
 
-function thong_ke_binhluan($kyw, $orderCondition, $item_per_page, $offset){
-    $sql = "SELECT * FROM `view_binhluan` WHERE 1";
-    if($kyw!=""){
-        $sql .=" and TenSP like '%".$kyw."%'";
-    }
-    $sql.=" ".$orderCondition." limit ".$item_per_page." offset ".$offset ;
+function thong_ke_binhluan() {
+    $sql = "SELECT SP.MaSP, SP.TenSP, COUNT(*) as so_luong, 
+                       MIN(BL.NgayBL) as cu_nhat, MAX(BL.NgayBL) as moi_nhat 
+                FROM binhluan BL 
+                JOIN sanpham SP ON SP.MaSP = BL.MaSP 
+                GROUP BY SP.MaSP, SP.TenSP 
+                HAVING so_luong > 0";
+
     return pdo_query($sql);
 }
-
 function record3(){
     $conn=pdo_get_connection();
     $sql="select COUNT(*) as TenSP from view_binhluan";
@@ -58,7 +59,7 @@ function record3(){
     return $totalrecord;
     
 }
-
+//doanh thu hàng tháng của năm hiện tại
 function calculate_month_revenue() {
     $conn = pdo_get_connection();
     $year = date('Y');
@@ -77,7 +78,7 @@ function calculate_month_revenue() {
 
     return $revenue;
 }
-
+//doanh thu tháng hiện tại
 function calculate_current_month_revenue() {
     $conn = pdo_get_connection();
     $current_month = date('n');
@@ -120,7 +121,7 @@ function get_total_users() {
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result['total_users'];
 }
-
+//tổng doanh thu của từng danh mục sản phẩm
 function generate_category_revenue_report(){
     $sql = "SELECT c.TenDM AS category_name, SUM((dt.SoLuong*dt.DonGia)) AS total_revenue 
         FROM chitietdonhang dt JOIN sanpham sp ON dt.MaSP = sp.MaSP 
@@ -144,6 +145,7 @@ function san_pham_moi_top_10() {
             LIMIT 10";
     return pdo_query($sql);
 }
+//Doanh thu từng ngày của tháng và năm hiện tại
 function calculate_current_month_daily_revenue() {
     $conn = pdo_get_connection();
     $current_month = date('n');
@@ -166,7 +168,7 @@ function calculate_current_month_daily_revenue() {
     return $dailyRevenue;
 }
 
-
+//doanh thu năm hiện tại trở về trước 5 năm
 function calculate_annual_revenue() {
     $conn = pdo_get_connection();
     $current_year = date('Y');

@@ -20,7 +20,7 @@
                             <h6>Người dùng: <?=$_SESSION['nguoidung']['Ho'] . ' '. $_SESSION['nguoidung']['Ten']?></h6>
                             <h6>Số điện thoại: <?=$_SESSION['nguoidung']['SDT']?></h6>
                             <h6>Địa chỉ: <?=$_SESSION['nguoidung']['DiaChi']?></h6>
-                            <h6>Phương thức thanh toán: <?=($donhang['PhuongThucTT'] == "a")?"Tiền mặt": (($donhang['PhuongThucTT']== "b")?"Chuyển khoản":(($donhang['PhuongThucTT'] == "c")?"Thẻ ghi nợ":"VNPay"));?></h6>
+                            <h6>Phương thức thanh toán: <?=($donhang['PhuongThucTT'] == "a")?"Tiền mặt": (($donhang['PhuongThucTT']== "b")?"MoMo":(($donhang['PhuongThucTT'] == "c")?"Thẻ ghi nợ":"ZaloPay"));?></h6>
                             <table>
                                 <thead>
                                     <tr>
@@ -37,18 +37,20 @@
                                         $hinh=$UPLOAD_URL.$HinhAnh1;
                                         ?>
                                     <tr>
-                                        <td class="row align-items-center"><img src="<?=$hinh?>" alt="" style="width:100px">
-                                        <?=$truncatedTenSP?></td>
+                                        <td class="d-flex justify-content-start align-items-center">
+                                            <div class="img_bill">
+                                                <img src="<?=$hinh?>" alt="" style="width:100px; margin-right:10px;">
+                                            </div>
+                                            <span><?=$truncatedTenSP?></span>
+                                        </td>
                                         <td><?=$SoLuong?></td>
-                                        <td><?=number_format($DonGia, 0, ",", ".")?> đ</td>
-                                        <td><?=number_format($DonGia * $SoLuong, 0, ",", ".")?> đ</td>
+                                        <td class="col-2"><?=number_format($DonGia, 0, ",", ".")?> đ</td>
+                                        <td class="col-2"><?=number_format($DonGia * $SoLuong, 0, ",", ".")?> đ</td>
                                     </tr>
                                     <?php } ?>
                                         <tfoot>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td colspan="4">Tổng tiền:</td>
+                                        <td colspan=2></td>
+                                        <td>Tổng tiền:</td>
                                         <td><?=number_format($donhang['TongTien'], 0, ",", ".")?> đ</td>
                                         </tfoot>
                                         

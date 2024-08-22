@@ -781,3 +781,9 @@ $(document).ready(function () {
     }
 });
 
+document.getElementById('form_thanhtoan').addEventListener('submit', function(event) {
+	var confirmation = confirm('Bạn có chắc chắn muốn đặt hàng?');
+	if (!confirmation) {
+	  event.preventDefault();
+	}
+  });

@@ -4,34 +4,45 @@ require_once 'pdo.php';
 /**
  * Thêm sản phẩm mới
  */
-function sanpham_insert($TenSP, $DonGia, $HinhAnh1, $HinhAnh2, $HinhAnh3, $GiamGia, $ThoiGian, $ThongTin, $DacBiet, $DMID, $LSP_ID){
-    $sql = "INSERT INTO sanpham(TenSP, DonGia, HinhAnh1, HinhAnh2, HinhAnh3, GiamGia, ThoiGian, ThongTin, DacBiet, DMID, LSP_ID) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $TenSP, $DonGia, $HinhAnh1, $HinhAnh2, $HinhAnh3, $GiamGia, $ThoiGian, $ThongTin, $DacBiet, $DMID, $LSP_ID);
+function sanpham_insert($TenSP, $DonGia, $HinhAnh1, $HinhAnh2, $HinhAnh3, $GiamGia, $ThoiGian, $ThongTin, $CPU, $RAM, $SSD_HDD, $GPU, $OS, $kich_thuoc_man_hinh, $kich_thuoc, $mau_sac, $chat_lieu, $cong_giao_tiep, $DacBiet, $DMID, $LSP_ID){
+    $sql = "INSERT INTO sanpham(TenSP, DonGia, HinhAnh1, HinhAnh2, HinhAnh3, GiamGia, ThoiGian, ThongTin, CPU, RAM, SSD_HDD, GPU, OS, kich_thuoc_man_hinh, kich_thuoc, mau_sac, chat_lieu, cong_giao_tiep, DacBiet, DMID, LSP_ID) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql, $TenSP, $DonGia, $HinhAnh1, $HinhAnh2, $HinhAnh3, $GiamGia, $ThoiGian, $ThongTin, $CPU, $RAM, $SSD_HDD, $GPU, $OS, $kich_thuoc_man_hinh, $kich_thuoc, $mau_sac, $chat_lieu, $cong_giao_tiep, $DacBiet, $DMID, $LSP_ID);
 }
 /**
  * Cập nhật  sản phẩm
  */
-function sanpham_update($MaSP, $TenSP, $DonGia, $HinhAnh1, $HinhAnh2, $HinhAnh3, $GiamGia, $ThoiGian, $ThongTin, $DacBiet, $DMID, $LSP_ID){
-    if($HinhAnh1!="" && $HinhAnh2!="" && $HinhAnh3!=""){
-        $sql = "UPDATE sanpham SET TenSP='".$TenSP."', DonGia='".$DonGia."', HinhAnh1='".$HinhAnh1."', HinhAnh2='".$HinhAnh2."', HinhAnh3='".$HinhAnh3."', GiamGia='".$GiamGia."', DacBiet='".$DacBiet."', ThoiGian='".$ThoiGian."', ThongTin='".$ThongTin."', DMID='".$DMID."', LSP_ID='".$LSP_ID."' WHERE MaSP='".$MaSP."'";
-    }elseif($HinhAnh1!="" && $HinhAnh2!=""){
-        $sql = "UPDATE sanpham SET TenSP='".$TenSP."', DonGia='".$DonGia."', HinhAnh1='".$HinhAnh1."', HinhAnh2='".$HinhAnh2."', GiamGia='".$GiamGia."', DacBiet='".$DacBiet."', ThoiGian='".$ThoiGian."', ThongTin='".$ThongTin."', DMID='".$DMID."', LSP_ID='".$LSP_ID."' WHERE MaSP='".$MaSP."'";
-    }elseif ($HinhAnh1!="" && $HinhAnh3!="") {
-        $sql = "UPDATE sanpham SET TenSP='".$TenSP."', DonGia='".$DonGia."', HinhAnh1='".$HinhAnh1."', HinhAnh2='".$HinhAnh3."', GiamGia='".$GiamGia."', DacBiet='".$DacBiet."', ThoiGian='".$ThoiGian."', ThongTin='".$ThongTin."', DMID='".$DMID."', LSP_ID='".$LSP_ID."' WHERE MaSP='".$MaSP."'";
-    }elseif ($HinhAnh2!="" && $HinhAnh3!="") {
-        $sql = "UPDATE sanpham SET TenSP='".$TenSP."', DonGia='".$DonGia."', HinhAnh2='".$HinhAnh2."', HinhAnh3='".$HinhAnh3."', GiamGia='".$GiamGia."', DacBiet='".$DacBiet."', ThoiGian='".$ThoiGian."', ThongTin='".$ThongTin."', DMID='".$DMID."', LSP_ID='".$LSP_ID."' WHERE MaSP='".$MaSP."'";
-    }elseif ($HinhAnh1!="") {
-        $sql = "UPDATE sanpham SET TenSP='".$TenSP."', DonGia='".$DonGia."', HinhAnh1='".$HinhAnh1."', GiamGia='".$GiamGia."', DacBiet='".$DacBiet."', ThoiGian='".$ThoiGian."', ThongTin='".$ThongTin."', DMID='".$DMID."', LSP_ID='".$LSP_ID."' WHERE MaSP='".$MaSP."'";
-    }elseif ($HinhAnh2!="") {
-        $sql = "UPDATE sanpham SET TenSP='".$TenSP."', DonGia='".$DonGia."', HinhAnh2='".$HinhAnh1."', GiamGia='".$GiamGia."', DacBiet='".$DacBiet."', ThoiGian='".$ThoiGian."', ThongTin='".$ThongTin."', DMID='".$DMID."', LSP_ID='".$LSP_ID."' WHERE MaSP='".$MaSP."'";
-    }elseif ($HinhAnh3!="") {
-        $sql = "UPDATE sanpham SET TenSP='".$TenSP."', DonGia='".$DonGia."', HinhAnh3='".$HinhAnh1."', GiamGia='".$GiamGia."', DacBiet='".$DacBiet."', ThoiGian='".$ThoiGian."', ThongTin='".$ThongTin."', DMID='".$DMID."', LSP_ID='".$LSP_ID."' WHERE MaSP='".$MaSP."'";
+function sanpham_update($MaSP, $TenSP, $DonGia, $HinhAnh1, $HinhAnh2, $HinhAnh3, $GiamGia, $ThoiGian, $ThongTin, $CPU, $RAM, $SSD_HDD, $GPU, $OS, $kich_thuoc_man_hinh, $kich_thuoc, $mau_sac, $chat_lieu, $cong_giao_tiep, $DacBiet, $DMID, $LSP_ID){
+    $sql = "UPDATE sanpham SET TenSP='".$TenSP."', DonGia='".$DonGia."', GiamGia='".$GiamGia."', ThoiGian='".$ThoiGian."', ThongTin='".$ThongTin."', CPU='".$CPU."', RAM='".$RAM."', SSD_HDD='".$SSD_HDD."', GPU='".$GPU."', OS='".$OS."', kich_thuoc_man_hinh='".$kich_thuoc_man_hinh."', kich_thuoc='".$kich_thuoc."', mau_sac='".$mau_sac."', chat_lieu='".$chat_lieu."', cong_giao_tiep='".$cong_giao_tiep."', DacBiet='".$DacBiet."', DMID='".$DMID."', LSP_ID='".$LSP_ID."'";
+    // $params = [$TenSP, $DonGia, $GiamGia, $DacBiet, $ThoiGian, $ThongTin, $CPU, $RAM, $SSD_HDD, $GPU, $OS, $kich_thuoc_man_hinh, $kich_thuoc, $mau_sac, $chat_lieu, $cong_giao_tiep, $DMID, $LSP_ID];
+    if($HinhAnh1 != "" && $HinhAnh2 != "" && $HinhAnh3 != ""){
+        $sql .= ", HinhAnh1='".$HinhAnh1."', HinhAnh2='".$HinhAnh2."', HinhAnh3='".$HinhAnh3."'";
+        // $params = array_merge($params, [$HinhAnh1, $HinhAnh2, $HinhAnh3]);
+    } elseif($HinhAnh1 != "" && $HinhAnh2 != ""){
+        $sql .= ", HinhAnh1='".$HinhAnh1."', HinhAnh2='".$HinhAnh2."'";
+        // $params = array_merge($params, [$HinhAnh1, $HinhAnh2]);
+    } elseif($HinhAnh1 != "" && $HinhAnh3 != ""){
+        $sql .= ", HinhAnh1='".$HinhAnh1."', HinhAnh3='".$HinhAnh3."'";
+       // $params = array_merge($params, [$HinhAnh1, $HinhAnh3]);
+    } elseif($HinhAnh2 != "" && $HinhAnh3 != ""){
+        $sql .= ", HinhAnh2='".$HinhAnh2."', HinhAnh3='".$HinhAnh3."'";
+       // $params = array_merge($params, [$HinhAnh2, $HinhAnh3]);
+    } elseif($HinhAnh1 != ""){
+        $sql .= ", HinhAnh1='".$HinhAnh1."'";
+       // $params = array_merge($params, [$HinhAnh1]);
+    } elseif($HinhAnh2 != ""){
+        $sql .= ", HinhAnh2='".$HinhAnh2."'";
+       // $params = array_merge($params, [$HinhAnh2]);
+    } elseif($HinhAnh3 != ""){
+        $sql .= ", HinhAnh3='".$HinhAnh3."'";
+        //$params = array_merge($params, [$HinhAnh3]);
     }
-    else{
-        $sql = "UPDATE sanpham SET TenSP='".$TenSP."', DonGia='".$DonGia."', GiamGia='".$GiamGia."', DacBiet='".$DacBiet."', ThoiGian='".$ThoiGian."', ThongTin='".$ThongTin."', DMID='".$DMID."', LSP_ID='".$LSP_ID."' WHERE MaSP='".$MaSP."'";
-    }
+
+    $sql .= " WHERE MaSP='".$MaSP."'";
+   // $params = array_merge($params, [$MaSP]);
+
     pdo_execute($sql);
 }
+
 /**
  * Xóa một hoặc nhiều  sản phẩm
  */

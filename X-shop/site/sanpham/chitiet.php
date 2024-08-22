@@ -6,6 +6,7 @@
     $hinh2=$UPLOAD_URL.$HinhAnh2;
     $hinh3=$UPLOAD_URL.$HinhAnh3;
     $sp_cung_loai = sanpham_select_by_loaisanpham($LSP_ID);
+    
     ?>
             <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
                 <div class="container d-flex align-items-center">
@@ -111,21 +112,81 @@
                                 <a class="nav-link active" id="product-review-link" data-toggle="tab" href="#product-review-tab" role="tab" aria-controls="product-review-tab" aria-selected="false">Bình luận</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="product-desc-link" data-toggle="tab" href="#product-desc-tab" role="tab" aria-controls="product-desc-tab" aria-selected="true">Description</a>
+                                <a class="nav-link" id="product-desc-link" data-toggle="tab" href="#product-desc-tab" role="tab" aria-controls="product-desc-tab" aria-selected="true">Thông số kỹ thuật</a>
                             </li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane" id="product-desc-tab" role="tabpanel" aria-labelledby="product-desc-link">
                                 <div class="product-desc-content">
-                                    <h3>Product Information</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. </p>
-                                    <ul>
-                                        <li>Nunc nec porttitor turpis. In eu risus enim. In vitae mollis elit. </li>
-                                        <li>Vivamus finibus vel mauris ut vehicula.</li>
-                                        <li>Nullam a magna porttitor, dictum risus nec, faucibus sapien.</li>
-                                    </ul>
-
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. </p>
+                                    <h3><strong>Thông số kỹ thuật</strong></h3>
+                                    <table class="table-striped p-detail">
+                                        <tbody class="product-detail">
+                                            <tr>
+                                                <td>CPU</td>
+                                                <td><?=$CPU?></td>
+                                                <td>Hệ điều hành</td>
+                                                <td><?=$OS?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bộ nhớ RAM</td>
+                                                <td><?=$RAM?></td>
+                                                <td>Kích thước</td>
+                                                <td><?=$kich_thuoc?></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div id="dialog-content" style="display:none;max-width:1000px;">
+                                        <h4 class="text-center">Thông số chi tiết  <?=$TenSP?></h4>
+                                                <table class="table-striped p-detail">
+                                                    <tbody class="product-detail">
+                                                        <tr>
+                                                            <td class="col-2">CPU</td>
+                                                            <td><?=$CPU?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="col-2">Hệ điều hành</td>
+                                                            <td><?=$OS?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="col-2">Bộ nhớ RAM</td>
+                                                            <td><?=$RAM?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="col-2">Ổ cứng</td>
+                                                            <td><?=$SSD_HDD?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="col-2">Màu sắc</td>
+                                                            <td><?=$mau_sac?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="col-2">Card màn hình</td>
+                                                            <td><?=$GPU?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="col-2">Chất liệu</td>
+                                                            <td><?=$chat_lieu?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="col-2">Kích thước</td>
+                                                            <td><?=$kich_thuoc?></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="col-2">Kích thước màn hình</td>
+                                                            <td>
+                                                                <?=$kich_thuoc_man_hinh?>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="col-2">Cổng giao tiếp</td>
+                                                            <td>
+                                                                <?=$cong_giao_tiep?>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                    <button class="btn btn-success" data-fancybox data-src="#dialog-content">Xem đầy đủ thông số</button>
                                 </div><!-- End .product-desc-content -->
                             </div><!-- .End .tab-pane -->
                             

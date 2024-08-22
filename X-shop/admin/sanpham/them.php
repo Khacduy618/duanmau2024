@@ -69,6 +69,46 @@
             <label for="ThongTin">Thông tin:</label>
             <textarea class="form-control" name="ThongTin" id="ThongTin" rows="3"></textarea>
         </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="CPU">CPU:</label>
+            <input type="text" class="form-control" name="CPU" id="CPU" placeholder="Vui lòng nhập CPU">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="RAM">RAM:</label>
+            <input type="text" class="form-control" name="RAM" id="RAM" placeholder="Vui lòng nhập RAM">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="SSD_HDD">Ổ cứng:</label>
+            <input type="text" class="form-control" name="SSD_HDD" id="SSD_HDD" placeholder="Vui lòng nhập ổ cứng">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="GPU">Card màn hình:</label>
+            <input type="text" class="form-control" name="GPU" id="GPU" placeholder="Vui lòng nhập card màn hình">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="OS">Hệ điều hành:</label>
+            <input type="text" class="form-control" name="OS" id="OS" placeholder="Vui lòng nhập hệ điều hành">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="kich_thuoc_man_hinh">Kích thước màn hình:</label>
+            <input type="text" class="form-control" name="kich_thuoc_man_hinh" id="kich_thuoc_man_hinh" placeholder="Vui lòng nhập kích thước màn hình">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="kich_thuoc">Kích thước:</label>
+            <input type="text" class="form-control" name="kich_thuoc" id="kich_thuoc" placeholder="Vui lòng nhập kích thước">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="mau_sac">Màu sắc:</label>
+            <input type="text" class="form-control" name="mau_sac" id="mau_sac" placeholder="Vui lòng nhập màu sắc">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="chat_lieu">Chất liệu:</label>
+            <input type="text" class="form-control" name="chat_lieu" id="chat_lieu" placeholder="Vui lòng nhập chất liệu">
+        </div>
+        <div class="form-group col-lg-5 me-3">
+            <label for="cong_giao_tiep">Cổng giao tiếp:</label>
+            <input type="text" class="form-control" name="cong_giao_tiep" id="cong_giao_tiep" placeholder="Vui lòng nhập cổng giao tiếp">
+        </div>
         <div class="btn-form row">
         <button type="submit" name="btn_insert" class="btn btn-success mt-3 me-2 col-lg-1">Thêm</button>
         <button type="reset" class="btn btn-primary mt-3 me-2 col-lg-1">Nhập lại</button>

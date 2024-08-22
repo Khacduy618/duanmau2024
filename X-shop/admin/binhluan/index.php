@@ -14,21 +14,10 @@
             header("location: index.php");
             exit();
         }
-    }elseif (exist_param('kyw')) {
-        $kyw= $_GET['kyw'];
-        require_once 'phantrang.php';
-        $items=thong_ke_binhluan($kyw, $orderCondition, $item_per_page, $offset);
-        $VIEW_NAME= "list.php";
     }
     else{
-        if(isset($_POST['kyw'])){
-            $kyw=$_POST['kyw'];
-        }else{
-            $kyw="";
-        }
         
-        require_once 'phantrang.php';
-        $items=thong_ke_binhluan($kyw, $orderCondition, $item_per_page, $offset);
+        $items=thong_ke_binhluan();
         $VIEW_NAME= "list.php";
     }
 

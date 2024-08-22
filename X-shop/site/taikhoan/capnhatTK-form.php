@@ -4,7 +4,8 @@ require_once '../../global.php';
         echo '<h5>'.$MESSAGE.'</h5>';
     }
 ?>
-<div class="row justify-content-center">
+<h2 class="mt-2 text-center">Cập nhật thông tin</h2>
+<div class="d-flex justify-content-center">
     <form action="capnhatTK.php" class="row m-4 container box" method="post" enctype="multipart/form-data">
         <div class="left-upload-img">
             <div class="img-upload">

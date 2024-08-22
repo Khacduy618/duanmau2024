@@ -33,9 +33,30 @@
             <div>Số điện thoại: <?=$SDT?></div></td>
             <td><?=$DiaChi?></td>
             <td><?=$GhiChu?></td>
-            <td class="col-1"><?=($PhuongThucTT == "a")?"Tiền mặt": (($PhuongThucTT== "b")?"Chuyển khoản":(($PhuongThucTT == "c")?"Thẻ ghi nợ":"VNPay"));?></td>
+            <td class="col-1"><?=($PhuongThucTT == "a")?"Tiền mặt": (($PhuongThucTT== "b")?"MoMo":(($PhuongThucTT == "c")?"Thẻ ghi nợ":"ZaloPay"));?></td>
             <td><?=number_format($TongTien,0,",",".")?>đ</td>
-            <td class="col-1"><?=($TrangThai=="a")?"Chưa thanh toán":(($TrangThai=="b")?"Đã thanh toán":(($TrangThai=="c")?"Đã duyệt":(($TrangThai=="d")?"Đang vận chuyển":"Đã giao")));?></td>
+            <td>
+                <input type="hidden" name="ID_DH" value="<?=$ID_DH?>">
+                <select class="form-select" name="TrangThai" id="TrangThai" onchange="updateTrangThai(this)">
+                    <?php
+                    $options = array(
+                        'a' => 'Chưa thanh toán',
+                        'b' => 'Đã thanh toán',
+                        'c' => 'Đã duyệt',
+                        'd' => 'Đang vận chuyển',
+                        'e' => 'Đã giao'
+                    );
+
+                    foreach ($options as $value => $label) {
+                        if ($value == $TrangThai) {
+                            echo '<option value="' . $value . '" selected>' . $label . '</option>';
+                        } else {
+                            echo '<option value="' . $value . '">' . $label . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
+            </td>
             <td class="col-1"><?=$NgayTaoDon?></td>
             <td><a href="<?=$sua?>" class="btn btn-danger">Sửa</a>
             </td>
@@ -91,23 +112,24 @@
                                 <?php
                                 }
                                 ?>
-                            <!-- <li class="page-item disabled">
-                                <a class="page-link page-link-prev" href="#" aria-label="Previous" tabindex="-1" aria-disabled="true">
-                                    <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>Prev
-                                </a>
-                            </li>
-                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item-total">of 6</li>
-                            <li class="page-item">
-                                <a class="page-link page-link-next" href="#" aria-label="Next">
-                                    Next <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>
-                                </a>
-                            </li> -->
+                            
                         </ul>
                     </nav>
             <?php
         }
     ?>
     
+    
+    <script>
+function updateTrangThai(select) {
+    var ID_DH = select.closest('tr').querySelector('[name="ID_DH"]').value;
+    var TrangThai = select.value;
+
+    // Gửi yêu cầu AJAX để cập nhật cơ sở dữ liệu
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'capnhat_trangthai.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send('ID_DH=' + ID_DH + '&TrangThai=' + TrangThai);
+}
+
+</script>

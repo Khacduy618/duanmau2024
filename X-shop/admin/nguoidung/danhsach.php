@@ -51,7 +51,7 @@
             <td><a href="<?=$sua?>" class="btn btn-danger">Sửa</a>
                 <?php
                     if($_SESSION['nguoidung']['MaND']!=$MaND){
-                        echo '<a href="'.$xoa.'" class="btn btn-warning">Xóa</a>';
+                        echo '<a href="'.$xoa.'" onclick="confirm(\'Bạn có chắc chắn muốn xóa người dùng này?\')" class="btn btn-warning">Xóa</a>';
                     }
                 ?>
             </td>
